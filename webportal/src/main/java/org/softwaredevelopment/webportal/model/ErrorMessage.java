@@ -1,5 +1,8 @@
 package org.softwaredevelopment.webportal.model;
-
+/*
+ * The class describes the state of an error message object, which is returned to a client if a request cannot be handled
+ * @author Tobi
+ */
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement

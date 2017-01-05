@@ -1,5 +1,8 @@
 package org.softwaredevelopment.webportal.exception;
 
+/*
+ * Creates a response with a generic error message, in case no explicit error message can be mapped to a response
+ */
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;

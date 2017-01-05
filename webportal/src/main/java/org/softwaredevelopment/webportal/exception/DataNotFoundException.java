@@ -1,5 +1,10 @@
 package org.softwaredevelopment.webportal.exception;
 
+/*
+ * Exception, which is thrown if a resource requested by a client cannot be found.
+ * Thus, it should be used in the service classes requesting data from the database.
+ * @author Tobi
+ */
 public class DataNotFoundException extends RuntimeException{
 
 	/**
