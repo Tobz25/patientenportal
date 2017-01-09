@@ -1,5 +1,4 @@
 /bin
-/.classpath
-/target/
-/.settings/
-/pom.properites
+.classpath
+target/
+.settings/
