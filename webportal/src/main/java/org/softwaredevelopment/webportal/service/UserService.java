@@ -7,5 +7,9 @@ package org.softwaredevelopment.webportal.service;
 
 
 public class UserService {
+	
+	public int getUserIDByUsername(String username){
+		return 1;
+	}
 
 }
