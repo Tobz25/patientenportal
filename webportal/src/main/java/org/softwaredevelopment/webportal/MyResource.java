@@ -5,9 +5,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.softwaredevelopment.webportal.helper.Secured;
+
 /**
  * Root resource (exposed at "myresource" path)
  */
+@Secured
 @Path("myresource")
 public class MyResource {
 
