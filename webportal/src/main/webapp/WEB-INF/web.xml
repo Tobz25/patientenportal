@@ -15,4 +15,8 @@
         <servlet-name>Jersey Web Application</servlet-name>
         <url-pattern>/webapi/*</url-pattern>
     </servlet-mapping>
+    
+    <listener>  
+    	<listener-class>org.hibernate.util.HibernateListener</listener-class>  
+	</listener>  
 </web-app>

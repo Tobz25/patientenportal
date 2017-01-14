@@ -10,9 +10,28 @@ import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.Random;
 
-public class Session {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+
+
+@Entity
+public class WebSession extends BaseClass {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long Id;
+
+	@Column
 	private String token;
-	private int userID;
+	
+	@OneToOne
+	private User user;
+	
 	public String getToken() {
 		return token;
 	}
@@ -20,12 +39,16 @@ public class Session {
 	public void setToken(String token) {
 		this.token = token;
 	}
+	
+	public WebSession() {
+		
+	}
 
-	public Session( int user){
-		this.userID = user;
-		Random random = new SecureRandom();
-		this.token = new BigInteger(130, random).toString(32);
+	public User getUser() {
+		return this.user;
 	}
 	
-
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

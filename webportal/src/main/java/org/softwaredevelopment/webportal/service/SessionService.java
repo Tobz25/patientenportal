@@ -3,25 +3,30 @@ package org.softwaredevelopment.webportal.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.softwaredevelopment.webportal.model.User;
+import org.softwaredevelopment.webportal.daos.DAOFactory;
+import org.softwaredevelopment.webportal.daos.SessionDAO;
+import org.softwaredevelopment.webportal.daos.UserDAO;
+import org.softwaredevelopment.webportal.daos.WebSessionDAOImpl;
 /*
  * Created a session for a given user.
  * 
  * @author Tobi
  */
-import org.softwaredevelopment.webportal.model.Session;
+import org.softwaredevelopment.webportal.model.WebSession;
 
 public class SessionService {
 	
-	UserService userService = new UserService();
-	
-	//List of Mok objects
-	public static List<Session> sessions = new ArrayList<Session>();
-	
-	public String createSessionToken(String username){
-		int userID = userService.getUserIDByUsername(username);
-		Session session = new Session(userID);
-		sessions.add(session);
-		return session.getToken();	
+	public String createSessionToken(User user){
+		WebSessionDAOImpl wsdi = new WebSessionDAOImpl();
+		wsdi.addSession(user);
+		
+		List<WebSession> sessions = wsdi.getWebSessions();
+		for (WebSession ws : sessions) {
+			if (ws.getUser().equals(user)) return ws.getToken();
+		}
+		
+		return null;
 	}
 
 }

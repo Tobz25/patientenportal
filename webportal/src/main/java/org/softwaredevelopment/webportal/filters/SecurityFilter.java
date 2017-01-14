@@ -18,7 +18,7 @@ import javax.ws.rs.ext.Provider;
 import org.glassfish.jersey.internal.util.Base64;
 import org.softwaredevelopment.webportal.service.AuthenticationService;
 
-
+ 
 @Provider
 public class SecurityFilter implements ContainerRequestFilter{
 	
