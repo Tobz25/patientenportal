@@ -1,6 +1,6 @@
 package org.softwaredevelopment.webportal.service;
 /*
- * This package is for all classes managing the resources in the database
+ * Klasse für den Zugriff auf benutzerspezifische Daten.
  * @author Tobi
  *
  */
