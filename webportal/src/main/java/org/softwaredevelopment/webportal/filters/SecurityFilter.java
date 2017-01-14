@@ -5,30 +5,31 @@ package org.softwaredevelopment.webportal.filters;
  * @author Tobi
  */
 import java.io.IOException;
-import java.util.List;
-import java.util.StringTokenizer;
+import javax.ws.rs.Priorities;
 
-import javax.ws.rs.NotAuthorizedException;
+import javax.annotation.Priority;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 
-import org.glassfish.jersey.internal.util.Base64;
+import org.softwaredevelopment.webportal.helper.Secured;
 import org.softwaredevelopment.webportal.service.AuthenticationService;
 
+<<<<<<< HEAD
  
+=======
+@Secured
+>>>>>>> 0dd67758bfe3ce579b7aa8cd5f9789576652c27b
 @Provider
+@Priority(Priorities.AUTHENTICATION)
 public class SecurityFilter implements ContainerRequestFilter{
 	
 	AuthenticationService authService = new AuthenticationService();
-	private static final String SECURED_URL_PREFIX = "myresource";
 
 	@Override
-	public void filter(ContainerRequestContext requestContext) throws IOException {
-		if(requestContext.getUriInfo().getPath().contains(SECURED_URL_PREFIX)){
-			
+	public void filter(ContainerRequestContext requestContext) throws IOException {			
 			// Get the HTTP Authorization header from the request
 	        String authorizationHeader = 
 	            requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
@@ -49,7 +50,6 @@ public class SecurityFilter implements ContainerRequestFilter{
 
 	        requestContext.abortWith(unauthorizedStatus);
 	        
-		}
 		
 	}
 	

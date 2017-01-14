@@ -2,8 +2,8 @@ package org.softwaredevelopment.webportal.resource;
 import java.util.List;
 
 /*
- * This is the service endpoint used for Login. The client has to post a username and a password. The service validates these
- * information and returns a session token.
+ * Service endpoint für den Login. Empfängt einen Benutzernamen (username)und ein Password (password).
+ * Der Service validiert diese und gibt bei positivemErgebnis ein Token zurück.
  * @author Tobi
  */
 import javax.ws.rs.Consumes;
