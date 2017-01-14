@@ -17,11 +17,7 @@ import javax.ws.rs.ext.Provider;
 import org.softwaredevelopment.webportal.helper.Secured;
 import org.softwaredevelopment.webportal.service.AuthenticationService;
 
-<<<<<<< HEAD
- 
-=======
 @Secured
->>>>>>> 0dd67758bfe3ce579b7aa8cd5f9789576652c27b
 @Provider
 @Priority(Priorities.AUTHENTICATION)
 public class SecurityFilter implements ContainerRequestFilter{
