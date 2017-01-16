@@ -3,8 +3,8 @@ package org.hibernate.util;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.softwaredevelopment.webportal.model.User;
-import org.softwaredevelopment.webportal.model.WebSession;
+import org.webportal.model.User;
+import org.webportal.model.WebSession;
 
 public class HibernateUtil {
  
